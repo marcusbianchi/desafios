@@ -1,30 +1,30 @@
-# Desafio 2: Crawlers
+# redditcrawler
 
-Parte do trabalho na IDwall inclui desenvolver *crawlers/scrapers* para coletar dados de websites.
-Como nós nos divertimos trabalhando, às vezes trabalhamos para nos divertir!
+## Command Line Version
+This Reddit crawler was created using Python3 and has two options, to run as a command line:
+- First install it's dependencies:
+```
+pip install bs4
+```
+- The you can query it:
+```
+python commandline.py "/r/cats;/r/worldnews"
+```
+It only takes one argument which is the subreddits that you wanna query separated by ';' and return it's HOT TOPICS OF THE DAY(above 5000 upvotes)
 
-O Reddit é quase como um fórum com milhares de categorias diferentes. Com a sua conta, você pode navegar por assuntos técnicos, ver fotos de gatinhos, discutir questões de filosofia, aprender alguns life hacks e ficar por dentro das notícias do mundo todo!
+## Bot Version
+- First install it's dependencies:
+```
+pip install bs4
+pip install telepot
+```
+- Then set environment variable with you BotKey:
+    - export BOOT_KEY_REDDIT="597001235:AAFuetAcfvJ09r4Cc7fbtOJKeCj_SPAu7aY"   
 
-Subreddits são como fóruns dentro do Reddit e as postagens são chamadas *threads*.
+- The you can run it:
+```
+python bot.py"
+```
 
-Para quem gosta de gatos, há o subreddit ["/r/cats"](https://www.reddit.com/r/cats) com threads contendo fotos de gatos fofinhos.
-Para *threads* sobre o Brasil, vale a pena visitar ["/r/brazil"](https://www.reddit.com/r/brazil) ou ainda ["/r/worldnews"](https://www.reddit.com/r/worldnews/).
-Um dos maiores subreddits é o "/r/AskReddit".
-
-Cada *thread* possui uma pontuação que, simplificando, aumenta com "up votes" (tipo um like) e é reduzida com "down votes".
-
-Sua missão é encontrar e listar as *threads* que estão bombando no Reddit naquele momento!
-Consideramos como bombando *threads* com 5000 pontos ou mais.
-
-## Entrada
-- Lista com nomes de subreddits separados por ponto-e-vírgula (`;`). Ex: "askreddit;worldnews;cats"
-
-### Parte 1
-Gerar e imprimir uma lista contendo número de upvotes, subreddit, título da thread, link para os comentários da thread, link da thread.
-Essa parte pode ser um CLI simples, desde que a formatação da impressão fique legível.
-
-### Parte 2
-Construir um robô que nos envie essa lista via Telegram sempre que receber o comando `/NadaPraFazer [+ Lista de subrredits]` (ex.: `/NadaPraFazer programming;dogs;brazil`)
-
-
-Qualquer método para coletar os dados é válido. Caso não saiba por onde começar, procure por SeleniumHQ (Java), PhantomJS (Javascript) e Beautiful Soup (Python).
+- After that add "personalredditcrawler_bot" to your Telegram Contacts and start to do queries:
+    - Type /NadaPraFazer [+ List of subrredits separeted by ';']
